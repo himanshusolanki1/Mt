@@ -7,330 +7,1017 @@
 
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-html{background:#001124;scroll-behavior:smooth}
-body{width:100%;min-height:100dvh;overflow-x:hidden;background:#001124;color:#fff;font-family:Arial,Helvetica,sans-serif}
+
+html{
+    background:#001124;
+    scroll-behavior:smooth;
+}
+
+body{
+    width:100%;
+    min-height:100dvh;
+    overflow-x:hidden;
+    background:#001124;
+    color:#fff;
+    font-family:Arial,Helvetica,sans-serif;
+}
 
 .page{
-width:100%;max-width:520px;min-height:100dvh;margin:auto;overflow:hidden;
-background:radial-gradient(circle at 20% 10%,#07508055,transparent 32%),
-radial-gradient(circle at 90% 20%,#00a66a2e,transparent 30%),
-linear-gradient(135deg,#061f3b,#001124 55%,#06382f)
+    width:100%;
+    max-width:520px;
+    min-height:100dvh;
+    margin:auto;
+    overflow:hidden;
+
+    background:
+        radial-gradient(circle at 20% 10%,#07508055,transparent 32%),
+        radial-gradient(circle at 90% 20%,#00a66a2e,transparent 30%),
+        linear-gradient(135deg,#061f3b,#001124 55%,#06382f);
 }
 
-/* HERO */
+
+/* =========================
+   HERO
+========================= */
+
 .hero{
-width:100%;min-height:100dvh;padding:clamp(30px,8vh,75px) clamp(18px,6vw,30px);
-display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center
+    width:100%;
+    min-height:100dvh;
+
+    padding:
+        clamp(30px,8vh,75px)
+        clamp(18px,6vw,30px);
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
 }
 
-/* LOGO */
+
+/* =========================
+   MT TRADER LOGO
+========================= */
+
 .logo{
-width:clamp(135px,42vw,190px);height:clamp(135px,42vw,190px);
-border-radius:50%;display:grid;place-items:center;flex-shrink:0;
-background:radial-gradient(circle,#174b78,#03172e 65%);
-border:2px solid #d9a928;
-box-shadow:0 0 60px #087b7066;position:relative
+    width:clamp(135px,42vw,190px);
+    height:clamp(135px,42vw,190px);
+
+    border-radius:50%;
+
+    display:grid;
+    place-items:center;
+
+    flex-shrink:0;
+
+    position:relative;
+
+    background:
+        radial-gradient(
+            circle,
+            #174b78,
+            #03172e 65%
+        );
+
+    border:2px solid #d9a928;
+
+    box-shadow:
+        0 0 25px #087b7066,
+        0 0 60px #007bff22;
+
+    /* FLOATING ANIMATION */
+    animation:
+        floatLogo
+        3.2s
+        ease-in-out
+        infinite;
 }
+
+
+/* Outer ring */
+
 .logo:after{
-content:"";position:absolute;inset:11px;border:1px solid #39a5e8;border-radius:50%
+    content:"";
+
+    position:absolute;
+
+    inset:11px;
+
+    border:
+        1px solid
+        #39a5e8;
+
+    border-radius:50%;
 }
+
+
+/* Logo text */
+
 .mt{
-font-size:clamp(50px,17vw,68px);line-height:.8;font-weight:1000;
-letter-spacing:-6px;background:linear-gradient(#fff,#54b9ff,#0071cf);
--webkit-background-clip:text;background-clip:text;color:transparent
+    font-size:
+        clamp(50px,17vw,68px);
+
+    line-height:.8;
+
+    font-weight:1000;
+
+    letter-spacing:-6px;
+
+    background:
+        linear-gradient(
+            #fff,
+            #54b9ff,
+            #0071cf
+        );
+
+    -webkit-background-clip:text;
+    background-clip:text;
+
+    color:transparent;
+
+    text-shadow:
+        0 0 15px
+        rgba(0,140,255,.35);
 }
+
+
 .trader{
-font-size:clamp(11px,4vw,16px);letter-spacing:clamp(3px,1.5vw,6px);
-font-weight:bold;color:#ffc52d;margin-top:9px
+    font-size:
+        clamp(11px,4vw,16px);
+
+    letter-spacing:
+        clamp(3px,1.5vw,6px);
+
+    font-weight:bold;
+
+    color:#ffc52d;
+
+    margin-top:9px;
 }
+
+
+/* Logo floating animation */
+
+@keyframes floatLogo{
+
+    0%,
+    100%{
+        transform:
+            translateY(0);
+    }
+
+    50%{
+        transform:
+            translateY(-10px);
+    }
+}
+
+
+/* =========================
+   HERO TEXT
+========================= */
 
 .tag{
-color:#00aaff;font-size:clamp(9px,3vw,14px);
-letter-spacing:clamp(2px,1.5vw,6px);font-weight:bold;margin-top:clamp(25px,6vh,40px)
+    color:#00aaff;
+
+    font-size:
+        clamp(9px,3vw,14px);
+
+    letter-spacing:
+        clamp(2px,1.5vw,6px);
+
+    font-weight:bold;
+
+    margin-top:
+        clamp(25px,6vh,40px);
 }
+
 
 h1{
-font-size:clamp(38px,12vw,56px);line-height:1;margin:clamp(12px,3vh,20px) 0;
-color:#ffbd18;text-shadow:0 0 20px #ffb30033
+    font-size:
+        clamp(38px,12vw,56px);
+
+    line-height:1;
+
+    margin:
+        clamp(12px,3vh,20px)
+        0;
+
+    color:#ffbd18;
+
+    text-shadow:
+        0 0 20px
+        #ffb30033;
 }
+
 
 .desc{
-width:100%;max-width:410px;font-size:clamp(16px,5vw,20px);
-line-height:1.65;color:#a9b8ca
+    width:100%;
+
+    max-width:410px;
+
+    font-size:
+        clamp(16px,5vw,20px);
+
+    line-height:1.65;
+
+    color:#a9b8ca;
 }
 
-/* BUTTON */
+
+/* =========================
+   TELEGRAM BUTTON
+========================= */
+
 .btn{
-width:100%;max-width:440px;min-height:clamp(58px,15vw,75px);
-padding:12px 15px;margin:clamp(25px,5vh,35px) auto 13px;
-display:flex;align-items:center;justify-content:center;text-align:center;gap:10px;
-background:#63e66c;color:#03121d;text-decoration:none;
-font-size:clamp(17px,5vw,24px);font-weight:900;border-radius:60px;
-box-shadow:0 0 35px #52e86a66;animation:pulse 2s infinite;
-transition:.25s
+    width:100%;
+
+    max-width:440px;
+
+    min-height:
+        clamp(58px,15vw,75px);
+
+    padding:
+        12px 15px;
+
+    margin:
+        clamp(25px,5vh,35px)
+        auto
+        13px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    gap:10px;
+
+    background:#63e66c;
+
+    color:#03121d;
+
+    text-decoration:none;
+
+    font-size:
+        clamp(17px,5vw,24px);
+
+    font-weight:900;
+
+    border-radius:60px;
+
+    box-shadow:
+        0 0 35px
+        #52e86a66;
+
+    animation:
+        buttonPulse
+        2s
+        ease-in-out
+        infinite;
+
+    transition:.25s;
 }
-.btn:hover{transform:scale(1.03);box-shadow:0 0 55px #52e86aaa}
-.btn:active{transform:scale(.96)}
-.note{color:#9eafc1;font-size:clamp(12px,3.8vw,15px)}
 
-@keyframes pulse{50%{box-shadow:0 0 55px #52e86a99;transform:scale(1.025)}}
 
-/* SECTIONS */
-section{width:100%;padding:clamp(45px,8vh,75px) clamp(18px,5vw,28px)}
+.btn:hover{
+    transform:scale(1.04);
 
-/* STATS */
-.stats{width:100%;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(10px,4vw,18px)}
+    box-shadow:
+        0 0 55px
+        #52e86aaa;
+}
+
+
+.btn:active{
+    transform:scale(.96);
+}
+
+
+.note{
+    color:#9eafc1;
+
+    font-size:
+        clamp(12px,3.8vw,15px);
+}
+
+
+@keyframes buttonPulse{
+
+    0%,
+    100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.025);
+    }
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+section{
+    width:100%;
+
+    padding:
+        clamp(45px,8vh,75px)
+        clamp(18px,5vw,28px);
+}
+
+
+/* =========================
+   STATS
+========================= */
+
+.stats{
+    width:100%;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
+    gap:
+        clamp(10px,4vw,18px);
+}
+
+
 .card{
-min-width:0;min-height:clamp(145px,42vw,185px);padding:clamp(20px,6vw,38px) 12px;
-border-radius:clamp(22px,7vw,32px);text-align:center;
-display:flex;flex-direction:column;justify-content:center;
-background:#031a32dd;border:1px solid #12456e
+    min-width:0;
+
+    min-height:
+        clamp(145px,42vw,185px);
+
+    padding:
+        clamp(20px,6vw,38px)
+        12px;
+
+    border-radius:
+        clamp(22px,7vw,32px);
+
+    text-align:center;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    background:#031a32dd;
+
+    border:
+        1px solid
+        #12456e;
 }
+
+
 .big{
-font-size:clamp(31px,10vw,47px);font-weight:900;color:#62e86d;
-overflow-wrap:anywhere
-}
-.card p{font-size:clamp(14px,4.5vw,20px);line-height:1.4;color:#aebdce;margin-top:15px}
+    font-size:
+        clamp(31px,10vw,47px);
 
-/* HEADINGS */
+    font-weight:900;
+
+    color:#62e86d;
+
+    overflow-wrap:anywhere;
+}
+
+
+.card p{
+    font-size:
+        clamp(14px,4.5vw,20px);
+
+    line-height:1.4;
+
+    color:#aebdce;
+
+    margin-top:15px;
+}
+
+
+/* =========================
+   SECTION HEADINGS
+========================= */
+
 .heading{
-text-align:center;font-size:clamp(29px,9vw,38px);
-line-height:1.15;font-weight:900;margin-bottom:clamp(30px,7vh,45px)
-}
-.gold{color:#ffbd18}
+    text-align:center;
 
-/* FEATURES */
+    font-size:
+        clamp(29px,9vw,38px);
+
+    line-height:1.15;
+
+    font-weight:900;
+
+    margin-bottom:
+        clamp(30px,7vh,45px);
+}
+
+
+.gold{
+    color:#ffbd18;
+}
+
+
+/* =========================
+   FEATURE CARDS
+========================= */
+
 .feature{
-width:100%;padding:clamp(25px,7vw,38px) clamp(20px,7vw,30px);
-border-radius:clamp(22px,7vw,32px);margin-bottom:20px;
-background:#031a32dd;border:1px solid #12456e
+    width:100%;
+
+    padding:
+        clamp(25px,7vw,38px)
+        clamp(20px,7vw,30px);
+
+    border-radius:
+        clamp(22px,7vw,32px);
+
+    margin-bottom:20px;
+
+    background:#031a32dd;
+
+    border:
+        1px solid
+        #12456e;
 }
+
+
 .icon{
-width:clamp(48px,15vw,58px);height:clamp(48px,15vw,58px);
-border-radius:18px;background:#062f68;display:grid;place-items:center;
-color:#63e66c;font-size:28px;margin-bottom:clamp(22px,6vw,30px)
+    width:
+        clamp(48px,15vw,58px);
+
+    height:
+        clamp(48px,15vw,58px);
+
+    border-radius:18px;
+
+    background:#062f68;
+
+    display:grid;
+
+    place-items:center;
+
+    color:#63e66c;
+
+    font-size:28px;
+
+    margin-bottom:
+        clamp(22px,6vw,30px);
 }
+
+
 .feature h3{
-font-size:clamp(23px,7vw,29px);line-height:1.2;margin-bottom:18px
+    font-size:
+        clamp(23px,7vw,29px);
+
+    line-height:1.2;
+
+    margin-bottom:18px;
 }
+
+
 .feature p{
-font-size:clamp(16px,5vw,19px);line-height:1.65;color:#aab9ca
+    font-size:
+        clamp(16px,5vw,19px);
+
+    line-height:1.65;
+
+    color:#aab9ca;
 }
 
-/* HOW IT WORKS */
+
+/* =========================
+   HOW IT WORKS
+========================= */
+
 .step{
-width:100%;padding:clamp(25px,7vw,38px) clamp(20px,7vw,30px);
-border-radius:clamp(22px,7vw,32px);margin-bottom:20px;
-background:#031a32dd;border:1px solid #12456e
+    width:100%;
+
+    padding:
+        clamp(25px,7vw,38px)
+        clamp(20px,7vw,30px);
+
+    border-radius:
+        clamp(22px,7vw,32px);
+
+    margin-bottom:20px;
+
+    background:#031a32dd;
+
+    border:
+        1px solid
+        #12456e;
 }
-.num{font-size:clamp(55px,18vw,70px);font-weight:900;color:#173653}
+
+
+.num{
+    font-size:
+        clamp(55px,18vw,70px);
+
+    font-weight:900;
+
+    color:#173653;
+}
+
+
 .step h3{
-color:#ffbd18;font-size:clamp(23px,7vw,29px);line-height:1.2;margin:10px 0 18px
+    color:#ffbd18;
+
+    font-size:
+        clamp(23px,7vw,29px);
+
+    line-height:1.2;
+
+    margin:
+        10px 0
+        18px;
 }
+
+
 .step p{
-font-size:clamp(16px,5vw,19px);line-height:1.65;color:#aab9ca
+    font-size:
+        clamp(16px,5vw,19px);
+
+    line-height:1.65;
+
+    color:#aab9ca;
 }
 
-/* FINAL */
-.final{text-align:center}
-.final h2{font-size:clamp(32px,10vw,45px);line-height:1.15;margin-bottom:20px}
 
-/* FOOTER */
-.footer{text-align:center;color:#73869c;font-size:11px;line-height:1.5;padding:25px}
+/* =========================
+   FINAL CTA
+========================= */
 
-/* SMALL PHONES */
+.final{
+    text-align:center;
+}
+
+
+.final h2{
+    font-size:
+        clamp(32px,10vw,45px);
+
+    line-height:1.15;
+
+    margin-bottom:20px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer{
+    text-align:center;
+
+    color:#73869c;
+
+    font-size:11px;
+
+    line-height:1.5;
+
+    padding:25px;
+}
+
+
+/* =========================
+   SMALL PHONES
+========================= */
+
 @media(max-width:360px){
-.hero{padding-top:28px;padding-bottom:30px}
-.logo{width:135px;height:135px}
-.tag{letter-spacing:2px}
-.desc{line-height:1.5}
-.btn{font-size:16px;min-height:55px}
-.stats{gap:9px}
-.card{min-height:140px;border-radius:20px}
-.big{font-size:30px}
-.card p{font-size:13px}
+
+    .hero{
+        padding-top:28px;
+        padding-bottom:30px;
+    }
+
+    .logo{
+        width:135px;
+        height:135px;
+    }
+
+    .tag{
+        letter-spacing:2px;
+    }
+
+    .desc{
+        line-height:1.5;
+    }
+
+    .btn{
+        font-size:16px;
+        min-height:55px;
+    }
+
+    .stats{
+        gap:9px;
+    }
+
+    .card{
+        min-height:140px;
+        border-radius:20px;
+    }
+
+    .big{
+        font-size:30px;
+    }
+
+    .card p{
+        font-size:13px;
+    }
 }
 
-/* SHORT SCREEN PHONES */
+
+/* =========================
+   SHORT SCREEN PHONES
+========================= */
+
 @media(max-height:700px){
-.hero{min-height:auto;padding-top:28px;padding-bottom:35px}
-.logo{width:140px;height:140px}
-.tag{margin-top:20px}
-h1{margin:10px 0}
-.btn{margin-top:20px}
+
+    .hero{
+        min-height:auto;
+
+        padding-top:28px;
+        padding-bottom:35px;
+    }
+
+    .logo{
+        width:140px;
+        height:140px;
+    }
+
+    .tag{
+        margin-top:20px;
+    }
+
+    h1{
+        margin:10px 0;
+    }
+
+    .btn{
+        margin-top:20px;
+    }
 }
 
-/* VERY WIDE DEVICES */
+
+/* =========================
+   LARGE SCREENS
+========================= */
+
 @media(min-width:521px){
-.page{box-shadow:0 0 80px #0008}
+
+    .page{
+        box-shadow:
+            0 0 80px
+            #0008;
+    }
 }
+
 </style>
 </head>
+
 
 <body>
 
 <div class="page">
 
-<!-- HERO -->
+
+<!-- =========================
+     HERO
+========================= -->
+
 <div class="hero">
 
-<div class="logo">
-<div>
-<div class="mt">MT</div>
-<div class="trader">TRADER</div>
+
+    <div class="logo">
+
+        <div>
+
+            <div class="mt">
+                MT
+            </div>
+
+            <div class="trader">
+                TRADER
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="tag">
+        QUOTEX TRADING SIGNALS
+    </div>
+
+
+    <h1>
+        MT TRADER
+    </h1>
+
+
+    <p class="desc">
+        Daily market signals, live analysis and disciplined
+        trading insights — delivered directly to your Telegram.
+    </p>
+
+
+    <a
+        class="btn"
+        href="https://t.me/+z9DtJDDwf0QyYjg9"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        ✈️ JOIN TELEGRAM CHANNEL
+    </a>
+
+
+    <div class="note">
+        Free to join • Instant alerts • Cancel anytime
+    </div>
+
+
 </div>
-</div>
-
-<div class="tag">QUOTEX TRADING SIGNALS</div>
-
-<h1>MT TRADER</h1>
-
-<p class="desc">
-Daily market signals, live analysis and disciplined
-trading insights — delivered directly to your Telegram.
-</p>
-
-<a class="btn" href="https://t.me/+z9DtJDDwf0QyYjg9"
-target="_blank" rel="noopener noreferrer">
-✈️ JOIN TELEGRAM CHANNEL
-</a>
-
-<div class="note">Free to join • Instant alerts • Cancel anytime</div>
-
-</div>
 
 
-<!-- STATS -->
+<!-- =========================
+     STATS
+========================= -->
+
 <section>
+
 <div class="stats">
 
-<div class="card">
-<div class="big">12+</div>
-<p>Signals<br>Daily</p>
+
+    <div class="card">
+
+        <div class="big">
+            12+
+        </div>
+
+        <p>
+            Signals<br>
+            Daily
+        </p>
+
+    </div>
+
+
+    <div class="card">
+
+        <div class="big">
+            24/7
+        </div>
+
+        <p>
+            Market<br>
+            Coverage
+        </p>
+
+    </div>
+
+
+    <div class="card">
+
+        <div class="big">
+            FREE
+        </div>
+
+        <p>
+            Channel<br>
+            Access
+        </p>
+
+    </div>
+
+
+    <div class="card">
+
+        <div class="big">
+            GLOBAL
+        </div>
+
+        <p>
+            Trader<br>
+            Community
+        </p>
+
+    </div>
+
+
 </div>
 
-<div class="card">
-<div class="big">24/7</div>
-<p>Market<br>Coverage</p>
-</div>
-
-<div class="card">
-<div class="big">FREE</div>
-<p>Channel<br>Access</p>
-</div>
-
-<div class="card">
-<div class="big">GLOBAL</div>
-<p>Trader<br>Community</p>
-</div>
-
-</div>
 </section>
 
 
-<!-- WHAT YOU GET -->
+<!-- =========================
+     WHAT YOU GET
+========================= -->
+
 <section>
 
+
 <h2 class="heading">
-WHAT YOU GET <span class="gold">INSIDE</span>
+    WHAT YOU GET
+    <span class="gold">INSIDE</span>
 </h2>
 
-<div class="feature">
-<div class="icon">▲</div>
-<h3>LIVE TRADING SIGNALS</h3>
-<p>
-Receive market observations, trade direction and timing information through Telegram.
-</p>
-</div>
 
 <div class="feature">
-<div class="icon">◇</div>
-<h3>MARKET BREAKDOWNS</h3>
-<p>
-Understand the market setup and the reasoning behind selected trading opportunities.
-</p>
+
+    <div class="icon">
+        ▲
+    </div>
+
+    <h3>
+        LIVE TRADING SIGNALS
+    </h3>
+
+    <p>
+        Receive market observations, trade direction
+        and timing information through Telegram.
+    </p>
+
 </div>
 
-<div class="feature">
-<div class="icon">◎</div>
-<h3>RISK MANAGEMENT</h3>
-<p>
-Learn structured money-management principles and responsible trading habits.
-</p>
-</div>
 
 <div class="feature">
-<div class="icon">◆</div>
-<h3>TRADER COMMUNITY</h3>
-<p>
-Connect with other traders, share results and continue learning together.
-</p>
+
+    <div class="icon">
+        ◇
+    </div>
+
+    <h3>
+        MARKET BREAKDOWNS
+    </h3>
+
+    <p>
+        Understand the market setup and the reasoning
+        behind selected trading opportunities.
+    </p>
+
 </div>
+
+
+<div class="feature">
+
+    <div class="icon">
+        ◎
+    </div>
+
+    <h3>
+        RISK MANAGEMENT
+    </h3>
+
+    <p>
+        Learn structured money-management principles
+        and responsible trading habits.
+    </p>
+
+</div>
+
+
+<div class="feature">
+
+    <div class="icon">
+        ◆
+    </div>
+
+    <h3>
+        TRADER COMMUNITY
+    </h3>
+
+    <p>
+        Connect with other traders, share results
+        and continue learning together.
+    </p>
+
+</div>
+
 
 </section>
 
 
-<!-- HOW IT WORKS -->
+<!-- =========================
+     HOW IT WORKS
+========================= -->
+
 <section>
 
+
 <h2 class="heading">
-HOW IT <span class="gold">WORKS</span>
+    HOW IT
+    <span class="gold">WORKS</span>
 </h2>
 
-<div class="step">
-<div class="num">01</div>
-<h3>JOIN THE CHANNEL</h3>
-<p>
-Tap the Telegram button and join the MT Trader community.
-</p>
-</div>
 
 <div class="step">
-<div class="num">02</div>
-<h3>GET THE SIGNAL</h3>
-<p>
-Follow the market updates and trading information shared in the channel.
-</p>
+
+    <div class="num">
+        01
+    </div>
+
+    <h3>
+        JOIN THE CHANNEL
+    </h3>
+
+    <p>
+        Tap the Telegram button and join
+        the MT Trader community.
+    </p>
+
 </div>
 
+
 <div class="step">
-<div class="num">03</div>
-<h3>MAKE YOUR DECISION</h3>
-<p>
-Review the information, manage your risk and make your own trading decision.
-</p>
+
+    <div class="num">
+        02
+    </div>
+
+    <h3>
+        GET THE SIGNAL
+    </h3>
+
+    <p>
+        Follow the market updates and trading
+        information shared in the channel.
+    </p>
+
 </div>
+
+
+<div class="step">
+
+    <div class="num">
+        03
+    </div>
+
+    <h3>
+        MAKE YOUR DECISION
+    </h3>
+
+    <p>
+        Review the information, manage your risk
+        and make your own trading decision.
+    </p>
+
+</div>
+
 
 </section>
 
 
-<!-- FINAL CTA -->
+<!-- =========================
+     FINAL CTA
+========================= -->
+
 <section class="final">
 
+
 <h2>
-TRADE WITH <span class="gold">MT TRADER</span>
+    TRADE WITH
+    <span class="gold">
+        MT TRADER
+    </span>
 </h2>
 
+
 <p class="desc">
-Build discipline. Follow the market.
-Keep learning with a growing trading community.
+    Build discipline. Follow the market.
+    Keep learning with a growing trading community.
 </p>
 
-<a class="btn" href="https://t.me/+z9DtJDDwf0QyYjg9"
-target="_blank" rel="noopener noreferrer">
-✈️ JOIN TELEGRAM CHANNEL
+
+<a
+    class="btn"
+    href="https://t.me/+z9DtJDDwf0QyYjg9"
+    target="_blank"
+    rel="noopener noreferrer"
+>
+    ✈️ JOIN TELEGRAM CHANNEL
 </a>
 
+
 <div class="note">
-Free to join • Instant alerts • Community access
+    Free to join • Instant alerts • Community access
 </div>
+
 
 </section>
 
 
 <div class="footer">
-Trading involves risk. Past performance does not guarantee future results.
+    Trading involves risk. Past performance does not guarantee future results.
 </div>
+
 
 </div>
 
